@@ -28,15 +28,11 @@ class ToiletTableViewController: UITableViewController, DataProtocol {
         // Sample Data for candyArray
         if(ToiletSingleton.instance.toilet.count>0){
             print("je suis ici coucou petite peruche \(ToiletSingleton.instance.toilet.count)")
-            self.toilets = ToiletSingleton.instance.toilet
         }
-        
-        // Reload the table
-        self.myTableView.reloadData()
     }
     
     func didRetrieveData(toilets: [Toilet]){
-        
+        self.toilets = toilets
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
