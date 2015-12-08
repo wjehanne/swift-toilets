@@ -63,7 +63,11 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="GrE-6V-tie"/>
                     <navigationItem key="navigationItem" title="Hello list" id="Alv-2c-Dmf">
-                        <barButtonItem key="rightBarButtonItem" title="fd" id="s3u-RS-jBn"/>
+                        <barButtonItem key="rightBarButtonItem" title="Urgence !" id="s3u-RS-jBn">
+                            <connections>
+                                <segue destination="tVO-ZB-WqO" kind="show" id="wJY-59-B3z"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="myTableView" destination="WS6-y1-992" id="L53-xh-5IK"/>
@@ -72,6 +76,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bzc-wJ-HGM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1445" y="910"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="FYF-Xm-cGr">
+            <objects>
+                <viewController id="tVO-ZB-WqO" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pV0-Zn-RBC"/>
+                        <viewControllerLayoutGuide type="bottom" id="C8U-k5-Cdl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JcA-0K-HSi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="rZd-oI-81U"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zlb-vg-iRz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2266" y="905"/>
         </scene>
         <!--Item-->
         <scene sceneID="RgM-rI-R3v">
@@ -108,6 +131,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="PR5-f7-TCn">
+            <objects>
+                <viewController id="Fq9-0U-O3J" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tPX-aM-VL9"/>
+                        <viewControllerLayoutGuide type="bottom" id="0qd-SN-1De"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bNU-nn-6DD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Yv-74-wjh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
