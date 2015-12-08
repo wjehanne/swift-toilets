@@ -13,6 +13,9 @@ import MapKit
 
 class ToiletSingleton {
     
+    var delegate: DataProtocol?
+    var listData: [Toilet] = []
+    
     static var _instance: ToiletSingleton?
     static var instance: ToiletSingleton {
         get {
@@ -35,9 +38,41 @@ class ToiletSingleton {
         }
     }
     
-    private init() { }
+    func askForDataWith(delegate: DataProtocol) {
+        
+        self.delegate = delegate
+        
+        Alamofire.request(.GET, "http://scenies.com/insset_api/resources/toilets.json")
+        .responseJSON { response in
+        
+        switch response.result {
+        case .Success(let data):
+        let json = JSON(data)
+        
+        for i in 0..<json.count {
+            let id:Int = json[i]["id"].intValue
+            let name:String = json[i]["name"].stringValue
+            let longitude:Double = json[i]["coordinates"]["longitude"].doubleValue
+            let latitude:Double = json[i]["coordinates"]["latitude"].doubleValue
+        
+            let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        
+            let toilet = Toilet(id: id, title: name, coordinate: location)
+            self.listData.append(toilet)
+        }
+            
+        if let d = self.delegate{
+            d.didRetrieveData(self.listData)
+        }
+        
+        case .Failure(let error):
+        print("Request failed with error: \(error)")
+        }
+        }
+    }
     
     func fetchAllToilet()-> [Toilet] {
+        
         let url = NSURL(string: "http://scenies.com/insset_api/resources/toilets.json")
         
         let data = NSData(contentsOfURL: url!)
@@ -56,29 +91,9 @@ class ToiletSingleton {
         }
         
         return toilets
-        
-        /*Alamofire.request(.GET, "http://scenies.com/insset_api/resources/toilets.json")
-            .responseJSON { response in
-                
-                switch response.result {
-                case .Success(let data):
-                    let json = JSON(data)
-                    
-                    for i in 0..<json.count {
-                        let id:Int = json[i]["id"].intValue
-                        let name:String = json[i]["name"].stringValue
-                        let longitude:Double = json[i]["coordinates"]["longitude"].doubleValue
-                        let latitude:Double = json[i]["coordinates"]["latitude"].doubleValue
-                        
-                        let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-                        
-                        let toilet = Toilet(id: id, title: name, coordinate: location)
-                        self.listData?.append(toilet)
-                    }
-                    
-                case .Failure(let error):
-                    print("Request failed with error: \(error)")
-                }
-        }*/
     }
+}
+
+protocol DataProtocol {
+    func didRetrieveData(toilets: [Toilet])
 }

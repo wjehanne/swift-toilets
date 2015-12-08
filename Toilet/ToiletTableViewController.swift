@@ -10,7 +10,8 @@ import UIKit
 
 class ToiletTableViewController: UITableViewController {
 
-    var candies = [Candy]()
+    @IBOutlet var maTableView: UITableView!
+    var toilets:[Toilet]? = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,29 +23,24 @@ class ToiletTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         // Sample Data for candyArray
-        self.candies = [Candy(category:"Chocolate", name:"chocolate Bar"),
-            Candy(category:"Chocolate", name:"chocolate Chip"),
-            Candy(category:"Chocolate", name:"dark chocolate"),
-            Candy(category:"Hard", name:"lollipop"),
-            Candy(category:"Hard", name:"candy cane"),
-            Candy(category:"Hard", name:"jaw breaker"),
-            Candy(category:"Other", name:"caramel"),
-            Candy(category:"Other", name:"sour chew"),
-            Candy(category:"Other", name:"gummi bear")]
+        if(ToiletSingleton.instance.toilet.count>0){
+            print("je suis ici coucou petite peruche \(ToiletSingleton.instance.toilet.count)")
+            self.toilets = ToiletSingleton.instance.toilet
+        }
         
         // Reload the table
-        self.tableView.reloadData()
+        self.maTableView.reloadData()
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //ask for a reusable cell from the tableview, the tableview will create a new one if it doesn't have any
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        let cell = self.maTableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         
         // Get the corresponding candy from our candies array
-        let candy = self.candies[indexPath.row]
+        let toilet = self.toilets?[indexPath.row]
         
         // Configure the cell
-        cell.textLabel!.text = candy.name
+        cell.textLabel!.text = toilet?.title
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         return cell

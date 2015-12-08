@@ -9,22 +9,22 @@
 import UIKit
 import MapKit
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, DataProtocol {
     
     @IBOutlet var myMapView: MKMapView!
-    var listToilets:[Toilet]? = []
-
-
+    let data = ToiletSingleton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
+        data.askForDataWith(self)
+        
         let initialLocation = CLLocation(latitude: 49.86006901848982, longitude: 3.2980109836676803)
         centerMapOnLocation(initialLocation)
         // Do any additional setup after loading the view, typically from a nib.
     
         if(ToiletSingleton.instance.toilet.count>0){
-            self.myMapView.addAnnotations(ToiletSingleton.instance.toilet)
-
+            //self.myMapView.addAnnotations(ToiletSingleton.instance.toilet)
         }
     }
     
@@ -33,6 +33,10 @@ class FirstViewController: UIViewController {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
             regionRadius * 2.0, regionRadius * 2.0)
         myMapView.setRegion(coordinateRegion, animated: true)
+    }
+    
+    func didRetrieveData(toilets: [Toilet]){
+        self.myMapView.addAnnotations(toilets)
     }
 }
 
