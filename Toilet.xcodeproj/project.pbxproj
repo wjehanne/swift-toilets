@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CF1A10F91C16C92400AC5148 /* Toilet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1A10F81C16C92400AC5148 /* Toilet.swift */; };
+		CF1A10FB1C16E65400AC5148 /* ToiletTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1A10FA1C16E65400AC5148 /* ToiletTableViewController.swift */; };
+		CF1A10FD1C16E8BB00AC5148 /* Candy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1A10FC1C16E8BB00AC5148 /* Candy.swift */; };
+		CF1A10FF1C16EDBD00AC5148 /* ToiletSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1A10FE1C16EDBD00AC5148 /* ToiletSingleton.swift */; };
 		CF3163281C16C81B0087D91C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3163271C16C81B0087D91C /* AppDelegate.swift */; };
 		CF31632A1C16C81B0087D91C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3163291C16C81B0087D91C /* FirstViewController.swift */; };
 		CF31632C1C16C81B0087D91C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF31632B1C16C81B0087D91C /* SecondViewController.swift */; };
@@ -21,6 +24,9 @@
 		36E15571A05DAFBA87DDA086 /* Pods-Toilet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Toilet.release.xcconfig"; path = "Pods/Target Support Files/Pods-Toilet/Pods-Toilet.release.xcconfig"; sourceTree = "<group>"; };
 		4F3216F5381D64485CB82B81 /* Pods_Toilet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Toilet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF1A10F81C16C92400AC5148 /* Toilet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toilet.swift; sourceTree = "<group>"; };
+		CF1A10FA1C16E65400AC5148 /* ToiletTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToiletTableViewController.swift; sourceTree = "<group>"; };
+		CF1A10FC1C16E8BB00AC5148 /* Candy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candy.swift; sourceTree = "<group>"; };
+		CF1A10FE1C16EDBD00AC5148 /* ToiletSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToiletSingleton.swift; sourceTree = "<group>"; };
 		CF3163241C16C81B0087D91C /* Toilet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Toilet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3163271C16C81B0087D91C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF3163291C16C81B0087D91C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +96,9 @@
 				CF3163321C16C81B0087D91C /* LaunchScreen.storyboard */,
 				CF3163351C16C81B0087D91C /* Info.plist */,
 				CF1A10F81C16C92400AC5148 /* Toilet.swift */,
+				CF1A10FA1C16E65400AC5148 /* ToiletTableViewController.swift */,
+				CF1A10FC1C16E8BB00AC5148 /* Candy.swift */,
+				CF1A10FE1C16EDBD00AC5148 /* ToiletSingleton.swift */,
 			);
 			path = Toilet;
 			sourceTree = "<group>";
@@ -217,7 +226,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF1A10F91C16C92400AC5148 /* Toilet.swift in Sources */,
+				CF1A10FD1C16E8BB00AC5148 /* Candy.swift in Sources */,
+				CF1A10FB1C16E65400AC5148 /* ToiletTableViewController.swift in Sources */,
 				CF31632C1C16C81B0087D91C /* SecondViewController.swift in Sources */,
+				CF1A10FF1C16EDBD00AC5148 /* ToiletSingleton.swift in Sources */,
 				CF3163281C16C81B0087D91C /* AppDelegate.swift in Sources */,
 				CF31632A1C16C81B0087D91C /* FirstViewController.swift in Sources */,
 			);
